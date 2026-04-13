@@ -163,12 +163,12 @@ export default function Home() {
               <p className="text-xs uppercase tracking-[0.25em] text-fuchsia-300">
                 Trending Artists
               </p>
-              <div className="mt-4 flex flex-wrap gap-3">
-                {trendingArtists.map((artist) => (
-                  <span
-                    key={artist}
-                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85"
-                  >
+            <div className="mt-4 flex flex-wrap gap-2">
+  {trendingArtists.map((artist) => (
+    <span
+      key={artist}
+      className="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10"
+    >
                     {artist}
                   </span>
                 ))}
