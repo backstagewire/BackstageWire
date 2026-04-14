@@ -24,9 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-[#050816] text-white">
         <div className="w-full overflow-hidden border-b border-white/10 bg-black text-white">
-          <div className="animate-marquee flex min-w-max items-center py-2 text-sm tracking-wide">
+          <div className="animate-marquee flex min-w-max items-center py-1 text-[11px] text-white/60">
             <span className="mx-6 shrink-0 font-semibold text-fuchsia-300">
-              🔥 TRENDING
+              Scene Wire
             </span>
 
             {repeatedTicker.map((item, index) => (
