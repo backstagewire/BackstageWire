@@ -1,46 +1,69 @@
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import { getAuthorBySlug } from '@/lib/authors';
-import { getIndex } from '@/lib/storage';
-import { formatDate } from '@/lib/utils';
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { authors } from "@/data/authors";
+import { stories } from "@/data/stories";
 
-export const revalidate = 0;
+export default function AuthorPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const author = authors.find((item) => item.slug === params.slug);
 
-export default async function AuthorPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const author = getAuthorBySlug(slug);
-  if (!author) notFound();
+  if (!author) {
+    notFound();
+  }
 
-  const index = await getIndex();
-  const items = index.items.filter((item) => item.authorSlug === slug);
+  const authorStories = stories.filter((story) => story.authorSlug === author.slug);
 
   return (
-    <main className="page-stack section-page">
-      <section className="hero subtle-hero author-hero">
-        <img src={author.avatar} alt={author.name} className="author-avatar author-avatar-large" />
-        <div>
-          <span className="eyebrow">{author.role.toUpperCase()}</span>
-          <h1>{author.name}</h1>
-          <p>{author.bio}</p>
-        </div>
-      </section>
+    <main className="bg-[#070914] text-white">
+      <section className="mx-auto max-w-6xl px-4 py-12 md:px-6">
+        <div className="grid gap-8 md:grid-cols-[220px_1fr] md:items-start">
+          <div
+            className="h-56 w-full rounded-3xl bg-cover bg-center md:h-64"
+            style={{ backgroundImage: `url(${author.image})` }}
+          />
 
-      <section className="grid compact-grid">
-        {items.map((item) => (
-          <article key={item.id} className="card">
-            {item.coverImage ? <img src={item.coverImage} alt={item.coverImageAlt || item.title} className="card-image" /> : null}
-            <div className="card-body">
-              <div className="pill-row">
-                <span className="pill">{item.sectionLabel}</span>
-                <span className="muted">{formatDate(item.updatedAt)}</span>
-              </div>
-              <h2>
-                <Link href={`/article/${item.slug}`}>{item.title}</Link>
-              </h2>
-              <p>{item.dek}</p>
-            </div>
-          </article>
-        ))}
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.28em] text-fuchsia-300">
+              Contributor
+            </p>
+            <h1 className="mt-3 text-4xl font-bold">{author.name}</h1>
+            <p className="mt-2 text-white/60">{author.role}</p>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-white/75">
+              {author.bio}
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-14 border-t border-white/10 pt-12">
+          <h2 className="text-2xl font-bold">Latest from {author.name}</h2>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {authorStories.map((story) => (
+              <Link
+                key={story.slug}
+                href={`/article/${story.slug}`}
+                className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:bg-white/10"
+              >
+                <div
+                  className="h-52 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${story.image})` }}
+                />
+                <div className="p-5">
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-fuchsia-300">
+                    {story.section.replace("-", " ")}
+                  </p>
+                  <h3 className="mt-3 text-xl font-semibold">{story.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-white/65">
+                    {story.excerpt}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </section>
     </main>
   );
