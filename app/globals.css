@@ -501,5 +501,5 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 18px 0; }
 
 .animate-marquee {
   display: inline-block;
-  animation: marquee 25s linear infinite;
+  animation: marquee 30s linear infinite;
 }
