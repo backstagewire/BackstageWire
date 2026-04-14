@@ -63,6 +63,39 @@ export const stories: Story[] = [
     authorSlug: "alex-mercer",
   },
   {
+    slug: "arena-pop-is-back-in-full-color",
+    section: "on-stage",
+    title: "Arena Pop Is Back in Full Color",
+    excerpt:
+      "Big hooks, bigger visuals, and a return to maximalist live show energy are reshaping the top of pop.",
+    body: [
+      "Pop at its biggest scale is leaning into spectacle again.",
+      "Artists are embracing more theatrical staging, more defined visual identities, and performances designed to live across both arenas and social platforms.",
+      "The result is a pop landscape that feels larger, glossier, and more deliberately cinematic.",
+      "In an era of fragmented attention, scale has become its own form of storytelling.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1600&q=80",
+    authorSlug: "rory-reed",
+  },
+  {
+    slug: "rock-crowds-are-getting-younger-again",
+    section: "on-stage",
+    title: "Rock Crowds Are Getting Younger Again",
+    excerpt:
+      "A new generation is showing up for guitars, volume, and the communal energy of live rock shows.",
+    body: [
+      "After years of being treated like a legacy format, rock is finding fresh energy in younger audiences.",
+      "What is returning is not nostalgia so much as appetite: for louder rooms, sharper silhouettes, and the physicality of a guitar-driven show.",
+      "The most interesting part of the shift is that it is happening across indie clubs, festival tents, and online fandom at the same time.",
+      "Rock is not simply coming back. It is being retranslated.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1508252592163-5d3c3c559f8a?auto=format&fit=crop&w=1600&q=80",
+    authorSlug: "alex-mercer",
+  },
+
+  {
     slug: "richmonds-indie-scene-is-quietly-exploding",
     section: "backstage-radar",
     title: "Richmond’s Indie Scene Is Quietly Exploding",
@@ -111,6 +144,39 @@ export const stories: Story[] = [
     authorSlug: "jamie-calder",
   },
   {
+    slug: "the-college-radio-artists-building-real-followings",
+    section: "backstage-radar",
+    title: "The College Radio Artists Building Real Followings",
+    excerpt:
+      "Outside the algorithm, campus stations are still surfacing artists with staying power.",
+    body: [
+      "College radio has always functioned as a kind of early-warning system for discovery.",
+      "What makes it useful now is that it often reflects sustained enthusiasm rather than short-lived virality.",
+      "Artists that perform well there tend to build communities instead of just impressions.",
+      "That kind of slow-growth attention is often more meaningful than a spike.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80",
+    authorSlug: "jamie-calder",
+  },
+  {
+    slug: "the-indie-bands-turning-opener-slots-into-breakout-moments",
+    section: "backstage-radar",
+    title: "The Indie Bands Turning Opener Slots Into Breakout Moments",
+    excerpt:
+      "For the smartest new acts, a support slot is no longer a footnote — it’s a launch strategy.",
+    body: [
+      "Opening slots used to be treated as exposure. Now they function more like acceleration.",
+      "The best emerging bands know how to turn those short sets into identity-building moments.",
+      "A sharp visual language, one undeniable song, and a memorable stage presence can do more than months of passive online marketing.",
+      "For newer acts, fifteen minutes in the right room can still change everything.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1516280030429-27679b3dc9cf?auto=format&fit=crop&w=1600&q=80",
+    authorSlug: "jamie-calder",
+  },
+
+  {
     slug: "the-releases-defining-this-week",
     section: "new-drop",
     title: "The Releases Defining This Week",
@@ -157,6 +223,39 @@ export const stories: Story[] = [
       "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1600&q=80",
     authorSlug: "casey-monroe",
   },
+  {
+    slug: "the-singles-quietly-taking-over-late-night-playlists",
+    section: "new-drop",
+    title: "The Singles Quietly Taking Over Late-Night Playlists",
+    excerpt:
+      "A certain mood is shaping the week’s best songs: intimate, hazy, and emotionally direct.",
+    body: [
+      "The strongest singles right now feel less like announcements and more like atmosphere.",
+      "They reward repeat listening and live in the in-between spaces: late drives, headphones, and midnight rewinds.",
+      "That kind of emotional texture is becoming just as valuable as hooks.",
+      "The most replayable songs are often the ones that do not demand attention so much as absorb it.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=1600&q=80",
+    authorSlug: "casey-monroe",
+  },
+  {
+    slug: "the-rise-of-soft-launch-releases",
+    section: "new-drop",
+    title: "The Rise of Soft-Launch Releases",
+    excerpt:
+      "More artists are dropping songs with less build-up and more trust in audience momentum.",
+    body: [
+      "The old release model depended on long lead times and heavy rollout choreography.",
+      "Now more artists are experimenting with softer drops — less announcement, less overexposure, and more confidence in the music itself.",
+      "That strategy often works best when artists already have a defined identity and an engaged audience.",
+      "In a crowded feed, understatement can read as confidence.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?auto=format&fit=crop&w=1600&q=80",
+    authorSlug: "casey-monroe",
+  },
+
   {
     slug: "why-music-biopics-are-dominating-pop-culture-again",
     section: "green-room",
@@ -206,6 +305,55 @@ export const stories: Story[] = [
     authorSlug: "jordan-vale",
   },
   {
+    slug: "why-stagewear-is-becoming-its-own-fashion-economy",
+    section: "green-room",
+    title: "Why Stagewear Is Becoming Its Own Fashion Economy",
+    excerpt:
+      "Performance clothing is no longer just styling — it’s branding, commerce, and narrative.",
+    body: [
+      "What artists wear on stage now travels instantly across platforms, fan edits, and shopping feeds.",
+      "That means stagewear functions as image-building and economic strategy at the same time.",
+      "The strongest looks are not simply fashionable; they are legible as part of an artist’s world.",
+      "In music culture, clothes increasingly behave like storytelling tools.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=80",
+    authorSlug: "jordan-vale",
+  },
+  {
+    slug: "the-return-of-band-tee-culture",
+    section: "green-room",
+    title: "The Return of Band Tee Culture",
+    excerpt:
+      "Merch is back at the center of fashion identity, and fans are wearing their taste more visibly again.",
+    body: [
+      "Band tees have re-entered fashion not just as nostalgia but as a public signal of taste.",
+      "What changed is context: the shirt is no longer only about fandom but about curation, irony, and cultural literacy.",
+      "Vintage merch, artist exclusives, and tour drops all operate as fashion objects now.",
+      "Wearing music has become a way of editing yourself in public.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1600&q=80",
+    authorSlug: "jordan-vale",
+  },
+  {
+    slug: "the-pop-star-beauty-look-is-getting-stranger-and-better",
+    section: "green-room",
+    title: "The Pop-Star Beauty Look Is Getting Stranger — and Better",
+    excerpt:
+      "From smeared glamour to sharp retro references, beauty is becoming a stronger part of pop identity.",
+    body: [
+      "Beauty in pop no longer sits in the background of the image — it is often the image.",
+      "Artists are using makeup and styling to signal eras, references, and emotional tone as clearly as album artwork once did.",
+      "That shift makes beauty part of the music conversation, not just celebrity coverage.",
+      "The most memorable artists understand that face, fashion, and sound now travel together.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80",
+    authorSlug: "jordan-vale",
+  },
+
+  {
     slug: "5-backstage-questions-with-japanese-breakfast",
     section: "dispatch",
     title: "5 Backstage Questions with Japanese Breakfast",
@@ -251,6 +399,38 @@ export const stories: Story[] = [
     ],
     image:
       "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1600&q=80",
+    authorSlug: "rory-reed",
+  },
+  {
+    slug: "5-backstage-questions-with-a-richmond-diy-frontperson",
+    section: "dispatch",
+    title: "5 Backstage Questions with a Richmond DIY Frontperson",
+    excerpt:
+      "A local-scene version of the format that keeps Backstage Wire rooted as well as aspirational.",
+    body: [
+      "One of the smartest ways to make a music site feel alive is to balance scale with intimacy.",
+      "That means not just chasing national names, but giving local artists a format that feels equally considered.",
+      "The same five questions reveal something different when asked inside a smaller scene.",
+      "That difference is part of the point.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1600&q=80",
+    authorSlug: "rory-reed",
+  },
+  {
+    slug: "5-backstage-questions-with-an-indie-stylist",
+    section: "dispatch",
+    title: "5 Backstage Questions with an Indie Stylist",
+    excerpt:
+      "A fashion-minded version of the feature that expands Backstage Wire beyond standard music Q&A.",
+    body: [
+      "Music culture is not only built by musicians. Stylists, photographers, designers, and creative directors shape the image around the sound.",
+      "Using the same recurring format with adjacent creative figures expands the world of the site without losing its identity.",
+      "It also makes the publication feel more connected to actual culture, not just release cycles.",
+      "Backstage, after all, is bigger than the stage.",
+    ],
+    image:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=80",
     authorSlug: "rory-reed",
   },
 ];
