@@ -12,6 +12,7 @@ const tickerItems = [
   "Richmond indie scene gaining national attention",
   "Vinyl sales hit another record year",
   "Japanese Breakfast teasing studio sessions",
+  "The Last Dinner Party still building momentum",
 ];
 
 export default function RootLayout({
@@ -25,11 +26,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-[#070914] text-white antialiased">
         <div className="overflow-hidden border-b border-white/10 bg-[#05070f]">
-          <div className="animate-marquee flex min-w-max items-center py-2 text-[12px] uppercase tracking-[0.18em] text-white/70">
+          <div className="animate-marquee flex min-w-max items-center py-2 text-[11px] uppercase tracking-[0.18em] text-white/65">
             <span className="mx-6 shrink-0 font-semibold text-fuchsia-300">
               Scene Wire
             </span>
-
             {repeated.map((item, index) => (
               <div key={`${item}-${index}`} className="flex shrink-0 items-center">
                 <span className="mx-4 text-white/25">•</span>
@@ -46,11 +46,14 @@ export default function RootLayout({
                 <p className="text-[11px] uppercase tracking-[0.3em] text-white/35">
                   Est. Now
                 </p>
-                <Link href="/" className="mt-2 block text-3xl font-black tracking-[0.12em] text-white">
+                <Link
+                  href="/"
+                  className="mt-2 block text-3xl font-black tracking-[0.12em] text-white"
+                >
                   BACKSTAGE WIRE
                 </Link>
                 <p className="mt-2 max-w-md text-sm leading-6 text-white/55">
-                  Music news and the culture around it.
+                  Pop, rock, indie, local scenes, and the culture around them.
                 </p>
               </div>
 
@@ -61,35 +64,30 @@ export default function RootLayout({
                 >
                   On Stage
                 </Link>
-
                 <Link
                   href="/radar"
                   className="rounded-full border border-white/10 px-4 py-2 text-white/75 transition hover:border-fuchsia-400/40 hover:bg-white/5 hover:text-white"
                 >
                   Backstage Radar
                 </Link>
-
                 <Link
                   href="/dispatch"
                   className="rounded-full border border-white/10 px-4 py-2 text-white/75 transition hover:border-fuchsia-400/40 hover:bg-white/5 hover:text-white"
                 >
                   Dispatch
                 </Link>
-
                 <Link
                   href="/green-room"
                   className="rounded-full border border-white/10 px-4 py-2 text-white/75 transition hover:border-fuchsia-400/40 hover:bg-white/5 hover:text-white"
                 >
                   Green Room
                 </Link>
-
                 <Link
                   href="/new-drop"
                   className="rounded-full border border-white/10 px-4 py-2 text-white/75 transition hover:border-fuchsia-400/40 hover:bg-white/5 hover:text-white"
                 >
                   New Drop
                 </Link>
-
                 <Link
                   href="/contributors"
                   className="rounded-full border border-white/10 px-4 py-2 text-white/75 transition hover:border-fuchsia-400/40 hover:bg-white/5 hover:text-white"
@@ -109,9 +107,9 @@ export default function RootLayout({
               <div>
                 <p className="text-lg font-semibold text-white">Backstage Wire</p>
                 <p className="mt-3 max-w-xl text-sm leading-7 text-white/55">
-                  Stories from the stage, the studio, and the spaces in between.
-                  Music discovery, pop culture, scene reports, and artists worth
-                  watching.
+                  Stories from the stage, the studio, the venue floor, and the
+                  spaces in between. Music discovery, pop culture, scene reports,
+                  and artists worth watching.
                 </p>
               </div>
 
