@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { stories } from "@/data/stories";
+import { authors } from "@/data/authors";
 
 export default function ArticlePage({
   params,
@@ -11,6 +13,8 @@ export default function ArticlePage({
   if (!story) {
     notFound();
   }
+
+  const author = authors.find((item) => item.slug === story.authorSlug);
 
   return (
     <main className="bg-[#070914] text-white">
@@ -29,6 +33,23 @@ export default function ArticlePage({
         </h1>
 
         <p className="mt-4 text-lg leading-8 text-white/70">{story.excerpt}</p>
+
+        {author && (
+          <Link
+            href={`/author/${author.slug}`}
+            className="mt-8 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/10"
+          >
+            <div
+              className="h-14 w-14 rounded-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${author.image})` }}
+            />
+            <div>
+              <p className="text-sm text-white/50">By</p>
+              <p className="font-semibold text-white">{author.name}</p>
+              <p className="text-sm text-white/50">{author.role}</p>
+            </div>
+          </Link>
+        )}
 
         <div className="mt-10 space-y-6 text-base leading-8 text-white/80">
           {story.body.map((paragraph) => (
