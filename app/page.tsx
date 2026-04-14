@@ -31,7 +31,7 @@ const onStageStories: Story[] = [
   },
   {
     category: "On Stage",
-    title: "New Music Friday Highlights: The Releases Everyone Is Talking About",
+    title: "New Music Friday Highlights",
     excerpt:
       "From alt-pop to indie rock, this week’s drops are shaping playlists and setting the tone for summer.",
     image:
@@ -104,7 +104,7 @@ const dispatches: Dispatch[] = [
   {
     artist: "Clairo",
     question: "What are you listening to this week?",
-    answer: "A lot of Sade, a lot of Mk.gee, and a few things I found at 2 a.m.",
+    answer: "A lot of Sade, a lot of Mk.gee, and a few things I found late at night.",
     image:
       "https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=1200&q=80",
   },
@@ -123,7 +123,6 @@ const dailyListening = [
   "Ethel Cain — American Teenager",
   "Dijon — Many Times",
   "Japanese Breakfast — Be Sweet",
-  "The Last Dinner Party — Nothing Matters",
 ];
 
 const trendingArtists = [
@@ -140,24 +139,50 @@ const sceneSignals = [
   "Festival undercards getting more adventurous",
   "Bedroom pop still feeding mainstream sounds",
   "Music biopics are back in the culture cycle",
-  "Smaller acts are outperforming algorithms with fan intimacy",
 ];
 
 function StoryCard({ story }: { story: Story }) {
   return (
-    <article className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:-translate-y-1 hover:bg-white/10">
+    <article className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:bg-white/10">
       <div
-        className="h-52 w-full bg-cover bg-center"
+        className="h-48 w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${story.image})` }}
       />
       <div className="p-5">
-        <p className="text-xs uppercase tracking-[0.2em] text-fuchsia-300">
+        <p className="text-[11px] uppercase tracking-[0.2em] text-fuchsia-300">
           {story.category}
         </p>
         <h3 className="mt-3 text-xl font-semibold leading-tight text-white">
           {story.title}
         </h3>
         <p className="mt-3 text-sm leading-7 text-white/70">{story.excerpt}</p>
+      </div>
+    </article>
+  );
+}
+
+function DispatchCard({ dispatch }: { dispatch: Dispatch }) {
+  return (
+    <article className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+      <div
+        className="h-44 w-full bg-cover bg-center"
+        style={{ backgroundImage: `url(${dispatch.image})` }}
+      />
+      <div className="p-5">
+        <p className="text-[11px] uppercase tracking-[0.2em] text-fuchsia-300">
+          Backstage Dispatch
+        </p>
+        <h3 className="mt-3 text-xl font-semibold text-white">
+          5 Backstage Questions with {dispatch.artist}
+        </h3>
+        <div className="mt-4 rounded-2xl bg-black/20 p-4">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-white/45">
+            {dispatch.question}
+          </p>
+          <p className="mt-2 text-sm leading-7 text-white/75">
+            “{dispatch.answer}”
+          </p>
+        </div>
       </div>
     </article>
   );
@@ -173,13 +198,10 @@ function Section({
   stories: Story[];
 }) {
   return (
-    <section className="mt-16">
-      <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-        <div>
-          <h2 className="text-3xl font-bold text-white">{title}</h2>
-          <p className="mt-1 text-sm text-white/50">{subtitle}</p>
-        </div>
-        <span className="text-sm text-fuchsia-300">More coverage</span>
+    <section className="mt-14">
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-white md:text-3xl">{title}</h2>
+        <p className="mt-1 text-sm text-white/50">{subtitle}</p>
       </div>
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {stories.map((story) => (
@@ -190,39 +212,12 @@ function Section({
   );
 }
 
-function DispatchCard({ dispatch }: { dispatch: Dispatch }) {
-  return (
-    <article className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:bg-white/10">
-      <div
-        className="h-44 w-full bg-cover bg-center"
-        style={{ backgroundImage: `url(${dispatch.image})` }}
-      />
-      <div className="p-5">
-        <p className="text-xs uppercase tracking-[0.2em] text-fuchsia-300">
-          Backstage Dispatch
-        </p>
-        <h3 className="mt-3 text-xl font-semibold text-white">
-          5 Backstage Questions with {dispatch.artist}
-        </h3>
-        <div className="mt-4 rounded-2xl bg-black/20 p-4">
-          <p className="text-xs uppercase tracking-[0.18em] text-white/45">
-            {dispatch.question}
-          </p>
-          <p className="mt-2 text-sm leading-7 text-white/75">
-            “{dispatch.answer}”
-          </p>
-        </div>
-      </div>
-    </article>
-  );
-}
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(139,92,246,0.18),_transparent_28%),radial-gradient(circle_at_top_right,_rgba(236,72,153,0.14),_transparent_24%),linear-gradient(to_bottom,_#050816,_#090d18,_#050816)] text-white">
-      <section className="mx-auto max-w-7xl px-6 py-14">
-        <div className="mb-8 flex flex-wrap items-center gap-3">
-          <span className="rounded-full border border-fuchsia-400/30 bg-fuchsia-500/10 px-4 py-2 text-xs uppercase tracking-[0.22em] text-fuchsia-200">
+      <section className="mx-auto max-w-7xl px-4 py-10 md:px-6 md:py-14">
+        <div className="mb-6 flex flex-wrap items-center gap-3">
+          <span className="rounded-full border border-fuchsia-400/30 bg-fuchsia-500/10 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-fuchsia-200">
             Backstage Pass
           </span>
           <span className="text-sm text-white/55">
@@ -230,25 +225,25 @@ export default function Home() {
           </span>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[1.45fr_0.8fr]">
+        <div className="grid gap-6 lg:grid-cols-[1.45fr_0.8fr]">
           <article className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
             <div
-              className="relative h-[460px] bg-cover bg-center"
+              className="relative h-[340px] bg-cover bg-center md:h-[460px]"
               style={{
                 backgroundImage:
                   "url(https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=1800&q=80)",
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-              <div className="absolute bottom-0 left-0 p-8 md:p-10">
-                <p className="text-xs uppercase tracking-[0.25em] text-fuchsia-300">
+              <div className="absolute bottom-0 left-0 p-5 md:p-10">
+                <p className="text-[11px] uppercase tracking-[0.25em] text-fuchsia-300">
                   Featured Story
                 </p>
-                <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-tight md:text-5xl">
+                <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-tight md:mt-4 md:text-5xl">
                   Backstage Wire Tracks the Artists, Releases, and Offstage
                   Moments Actually Shaping Music Culture
                 </h1>
-                <p className="mt-5 max-w-2xl text-lg leading-8 text-white/80">
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80 md:text-lg md:leading-8">
                   Music-first coverage with insider energy, indie discovery,
                   scene reporting, and the cultural ripple effects happening
                   behind the spotlight.
@@ -256,20 +251,20 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-4 p-6 md:grid-cols-2">
+            <div className="grid gap-4 p-5 md:grid-cols-2 md:p-6">
               <div className="rounded-2xl bg-white/5 p-4">
-                <p className="text-xs uppercase tracking-[0.2em] text-fuchsia-300">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-fuchsia-300">
                   Radar Pick
                 </p>
-                <h3 className="mt-2 text-xl font-semibold">
+                <h3 className="mt-2 text-lg font-semibold md:text-xl">
                   Richmond’s Indie Scene Is Quietly Exploding
                 </h3>
               </div>
               <div className="rounded-2xl bg-white/5 p-4">
-                <p className="text-xs uppercase tracking-[0.2em] text-fuchsia-300">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-fuchsia-300">
                   Daily Listening
                 </p>
-                <h3 className="mt-2 text-xl font-semibold">
+                <h3 className="mt-2 text-lg font-semibold md:text-xl">
                   The tracks setting the tone today
                 </h3>
               </div>
@@ -277,15 +272,15 @@ export default function Home() {
           </article>
 
           <aside className="space-y-5">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-              <p className="text-xs uppercase tracking-[0.25em] text-fuchsia-300">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
+              <p className="text-[11px] uppercase tracking-[0.25em] text-fuchsia-300">
                 Crowd Noise
               </p>
-              <div className="mt-4 flex flex-wrap gap-3">
+              <div className="mt-4 flex flex-wrap gap-2">
                 {trendingArtists.map((artist) => (
                   <span
                     key={artist}
-                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/85"
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-white/85"
                   >
                     {artist}
                   </span>
@@ -293,77 +288,49 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-              <p className="text-xs uppercase tracking-[0.25em] text-fuchsia-300">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
+              <p className="text-[11px] uppercase tracking-[0.25em] text-fuchsia-300">
                 Scene Signals
               </p>
-              <ul className="mt-4 space-y-4 text-sm leading-7 text-white/75">
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-white/75">
                 {sceneSignals.map((signal) => (
                   <li key={signal}>• {signal}</li>
                 ))}
               </ul>
             </div>
 
-            <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
-              <div
-                className="h-44 bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    "url(https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1200&q=80)",
-                }}
-              />
-              <div className="p-6">
-                <p className="text-xs uppercase tracking-[0.25em] text-fuchsia-300">
-                  Backstage Wire
-                </p>
-                <p className="mt-4 text-sm leading-7 text-white/75">
-                  Stories from the stage, the studio, and the spaces in between.
-                </p>
-              </div>
-            </div>
-          </aside>
-        </div>
-
-        <section className="mt-12 rounded-3xl border border-white/10 bg-white/5 p-6">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-fuchsia-300">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-5 md:p-6">
+              <p className="text-[11px] uppercase tracking-[0.25em] text-fuchsia-300">
                 The Backstage Playlist
               </p>
-              <h2 className="mt-2 text-2xl font-bold text-white">
+              <h2 className="mt-2 text-xl font-bold text-white">
                 What Everyone’s Listening To Today
               </h2>
               <p className="mt-2 text-sm text-white/55">
                 Updated daily by Backstage Wire
               </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {dailyListening.map((track) => (
+                  <span
+                    key={track}
+                    className="rounded-full border border-white/10 bg-black/20 px-3 py-2 text-sm text-white/80"
+                  >
+                    {track}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-wrap gap-3">
-              {dailyListening.map((track) => (
-                <span
-                  key={track}
-                  className="rounded-full border border-white/10 bg-black/20 px-4 py-2 text-sm text-white/80"
-                >
-                  {track}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
+          </aside>
+        </div>
 
-        <section className="mt-16">
-          <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
-            <div>
-              <h2 className="text-3xl font-bold text-white">
-                Backstage Dispatch
-              </h2>
-              <p className="mt-1 text-sm text-white/50">
-                Quick-hit artist Q&As that feel personal, repeatable, and
-                shareable.
-              </p>
-            </div>
-            <span className="text-sm text-fuchsia-300">
-              5 Backstage Questions
-            </span>
+        <section className="mt-14">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-white md:text-3xl">
+              Backstage Dispatch
+            </h2>
+            <p className="mt-1 text-sm text-white/50">
+              Quick artist Q&As that feel personal, repeatable, and shareable.
+            </p>
           </div>
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -381,23 +348,23 @@ export default function Home() {
 
         <Section
           title="Backstage Radar"
-          subtitle="The artists, scenes, and signals worth catching before everyone else does."
+          subtitle="The artists and scenes worth catching before everyone else does."
           stories={backstageRadarStories}
         />
 
         <Section
           title="Green Room"
-          subtitle="Where music, style, film, internet culture, and artist mythology collide."
+          subtitle="Where music, style, film, and internet culture collide."
           stories={greenRoomStories}
         />
 
-        <section className="mt-16 rounded-3xl border border-white/10 bg-white/5 p-8">
-          <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+        <section className="mt-14 rounded-3xl border border-white/10 bg-white/5 p-6 md:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
             <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-fuchsia-300">
+              <p className="text-[11px] uppercase tracking-[0.25em] text-fuchsia-300">
                 Newsletter
               </p>
-              <h2 className="mt-3 text-3xl font-bold text-white">
+              <h2 className="mt-3 text-2xl font-bold text-white md:text-3xl">
                 Get the backstage pass
               </h2>
               <p className="mt-4 max-w-xl text-white/70">
@@ -406,7 +373,7 @@ export default function Home() {
               </p>
             </div>
             <div className="flex items-center">
-              <div className="flex w-full gap-3">
+              <div className="flex w-full flex-col gap-3 sm:flex-row">
                 <input
                   type="email"
                   placeholder="Email address"
