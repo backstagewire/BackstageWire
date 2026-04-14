@@ -492,7 +492,7 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 18px 0; }
 }
 @keyframes marquee {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
@@ -500,6 +500,6 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 18px 0; }
 }
 
 .animate-marquee {
-  display: inline-block;
-  animation: marquee 30s linear infinite;
+  animation: marquee 32s linear infinite;
+  will-change: transform;
 }
