@@ -215,10 +215,10 @@ function Section({
 export default function Home() {
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(139,92,246,0.18),_transparent_28%),radial-gradient(circle_at_top_right,_rgba(236,72,153,0.14),_transparent_24%),linear-gradient(to_bottom,_#050816,_#090d18,_#050816)] text-white">
-      <section className="mx-auto max-w-7xl px-4 py-10 md:px-6 md:py-14">
+      <section className="mx-auto max-w-7xl px-4 pt-12 pb-10 md:px-6 md:pt-16 md:pb-14">
         <div className="mb-6 flex flex-wrap items-center gap-3">
           <span className="rounded-full border border-fuchsia-400/30 bg-fuchsia-500/10 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-fuchsia-200">
-            Backstage Pass
+            Backstage Pass - Editor's Note
           </span>
           <span className="max-w-md text-sm leading-6 text-white/55">
   Music culture from the other side of the curtain.
@@ -234,7 +234,7 @@ export default function Home() {
                   "url(https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=crop&w=1800&q=80)",
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-transparent" />
               <div className="absolute bottom-0 left-0 p-5 md:p-10">
                 <p className="text-[11px] uppercase tracking-[0.25em] text-fuchsia-300">
                   Featured Story
