@@ -168,7 +168,7 @@ function DispatchCard({ dispatch }: { dispatch: Dispatch }) {
         className="h-44 w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${dispatch.image})` }}
       />
-      <div className="p-5">
+      <div className="flex h-full flex-col p-5">
         <p className="text-[11px] uppercase tracking-[0.2em] text-fuchsia-300">
           Backstage Dispatch
         </p>
@@ -220,12 +220,12 @@ export default function Home() {
           <span className="rounded-full border border-fuchsia-400/30 bg-fuchsia-500/10 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-fuchsia-200">
             Backstage Pass
           </span>
-          <span className="text-sm text-white/55">
-            Music culture from the other side of the curtain.
-          </span>
+          <span className="max-w-md text-sm leading-6 text-white/55">
+  Music culture from the other side of the curtain.
+</span>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.45fr_0.8fr]">
+       <div className="grid items-start gap-6 lg:grid-cols-[1.45fr_0.8fr]">
           <article className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
             <div
               className="relative h-[340px] bg-cover bg-center md:h-[460px]"
@@ -239,7 +239,7 @@ export default function Home() {
                 <p className="text-[11px] uppercase tracking-[0.25em] text-fuchsia-300">
                   Featured Story
                 </p>
-                <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-tight md:mt-4 md:text-5xl">
+                <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-[1.1] md:mt-4 md:text-5xl">
                   Backstage Wire Tracks the Artists, Releases, and Offstage
                   Moments Actually Shaping Music Culture
                 </h1>
@@ -251,7 +251,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-4 p-5 md:grid-cols-2 md:p-6">
+            <div className="mt-4 flex flex-wrap gap-2">
               <div className="rounded-2xl bg-white/5 p-4">
                 <p className="text-[11px] uppercase tracking-[0.2em] text-fuchsia-300">
                   Radar Pick
